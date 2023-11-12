@@ -1,0 +1,59 @@
+extern func print_string (string) void;
+extern func print_int (int) void;
+extern func read_int () int;
+
+package foo {
+   var j[100] int;
+   var k int = 1;   
+
+   func main() void {
+    var x int;
+    var w[100] int;
+
+     print_string("Enter a number: ");   
+     x = read_int();
+     print_string("\nThe number you entered: ");
+     print_int(x); 
+
+     if(x > 50) { 
+        print_string("\nThe number you entered is greater than 50.");
+     } // end of if
+     else{
+        print_string("\nThe number you entered is less than or equal to 50.");
+     } // end of else     
+
+     x = 40;
+     k = 45;
+
+     j[x] = 42;
+     w[k] = 42;
+
+     print_string("\nj[k] is: ");
+     print_int(j[x]);
+
+     print_string("\nw[x] is: ");
+     print_int(w[k]);
+   
+     print_string("\nx is: ");
+     print_int(x);
+     
+     while(x < 45) {
+        print_string("\nx = x + 1");
+        x = x + 1; 
+        print_string("x = ");
+        print_int(x);
+     } // end of while
+     
+     print_string("\n1 + 1 =");
+     print_int(1 + 1);
+
+     print_string("\n1 - 1 = ");
+     print_int(1 - 1);      
+       
+     print_string("\n1 * 2 = ");
+     print_int(1 * 2);
+
+     print_string("\n8 / 2 = ");
+     print_int(8 / 2);
+    } // end of main
+} // end of package foo
